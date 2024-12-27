@@ -1,7 +1,7 @@
 build:
 	go build -o ./bin/GO-BLOCKCHAIN
 
-run:
+run: build
 	./bin/GO-BLOCKCHAIN
 
 test:
