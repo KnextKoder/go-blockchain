@@ -29,7 +29,7 @@ func (k PrivateKey) Sign(data []byte) (*Signature, error){
 
 func GeneratePrivateKey() PrivateKey {
 	key, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
-
+	
 	if err != nil {
 		panic(err)
 	}
