@@ -18,6 +18,18 @@ type Header struct {
 	TImeStamp int64
 }
 
+// type InformationHash struct {
+// 	Value types.Hash
+// 	Valid bool
+// }
+
+// type Knowledge struct {
+// 	blockHash types.Hash
+// 	*InformationHash
+// 	timestamp int64
+// 	currentValue float64 // min == 0.0 and max <= 1.0
+// 	previousValue float64 // min == 0.0 and max < 1.0
+// }
 
 type Block struct {
 	*Header
@@ -25,9 +37,18 @@ type Block struct {
 	Validator  crypto.PublicKey
 	Signature  *crypto.Signature
 	
+	// *Knowledge
 	// Cached version of the header hash
 	hash types.Hash
 }
+
+// func NewSmartBlock(h *Header, txx []Transaction, k *Knowledge) *Block {
+// 	return &Block{
+// 		Header: h, 
+// 		Transactions: txx,
+// 		Knowledge: k,
+// 	}
+// }
 
 func NewBlock(h *Header, txx []Transaction) *Block {
 	return &Block{
